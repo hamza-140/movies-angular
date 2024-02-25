@@ -1,0 +1,10 @@
+.parent {
+    display: flex; /* Use Flexbox layout */
+    
+    justify-content: space-between; /* Align items horizontally with space between */
+  }
+  
+  .form-container {
+    flex: 1; /* Allow components to grow and shrink */
+  }
+  

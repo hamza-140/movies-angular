@@ -1,0 +1,219 @@
+<div
+  style="
+    border: 3px solid #f2f2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  "
+>
+  <!-- Chart 1: Pie Chart -->
+  <ngx-charts-pie-chart
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      { name: 'Action', value: 40 },
+      { name: 'Comedy', value: 25 },
+      { name: 'Drama', value: 20 },
+      { name: 'Sci-Fi', value: 15 }
+    ]"
+    [legend]="false"
+    [labels]="true"
+    [doughnut]="false"
+    [explodeSlices]="false"
+    [gradient]="false"
+    [arcWidth]="0.5"
+    [animations]="true"
+    (select)="onSelect()"
+  >
+  </ngx-charts-pie-chart>
+
+  <!-- Chart 2: Bar Vertical Chart -->
+  <ngx-charts-bar-vertical
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      { name: 'Action', value: 40 },
+      { name: 'Comedy', value: 25 },
+      { name: 'Drama', value: 20 },
+      { name: 'Sci-Fi', value: 15 }
+    ]"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    (select)="onSelect()"
+  >
+  </ngx-charts-bar-vertical>
+
+  <!-- Chart 3: Line Chart -->
+  <ngx-charts-line-chart
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      {
+        name: 'Box Office Revenue',
+        series: [
+          { name: 'Week 1', value: 1000000 },
+          { name: 'Week 2', value: 2000000 },
+          { name: 'Week 3', value: 1500000 }
+        ]
+      }
+    ]"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [autoScale]="true"
+    [timeline]="false"
+    (select)="onSelect()"
+  >
+  </ngx-charts-line-chart>
+
+  <!-- Chart 4: Bubble Chart -->
+  <ngx-charts-bubble-chart
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      {
+        name: 'Movies',
+        series: [
+          { name: 'Action', x: 10, y: 15, r: 5 },
+          { name: 'Comedy', x: 15, y: 10, r: 8 }
+        ]
+      }
+    ]"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect()"
+  >
+  </ngx-charts-bubble-chart>
+
+  <!-- Chart 5: Heatmap Chart -->
+  <ngx-charts-heat-map
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      {
+        name: 'Week',
+        series: [
+          { name: 'Monday', value: 10 },
+          { name: 'Tuesday', value: 20 },
+          { name: 'Wednesday', value: 30 },
+          { name: 'Thursday', value: 25 },
+          { name: 'Friday', value: 35 }
+        ]
+      }
+    ]"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect()"
+  >
+  </ngx-charts-heat-map>
+
+  <!-- Chart 6: Area Chart -->
+  <ngx-charts-area-chart
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      {
+        name: 'Box Office Revenue',
+        series: [
+          { name: 'Jan', value: 1000000 },
+          { name: 'Feb', value: 2000000 },
+          { name: 'Mar', value: 1500000 }
+        ]
+      }
+    ]"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect()"
+  >
+  </ngx-charts-area-chart>
+
+  <!-- Chart 7: TreeMap Chart -->
+  <ngx-charts-tree-map
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      { name: 'Top Movies', value: 100 },
+      { name: 'Upcoming Movies', value: 200 }
+    ]"
+    [gradient]="false"
+    [animations]="true"
+    (select)="onSelect()"
+  >
+  </ngx-charts-tree-map>
+
+  <!-- Chart 8: Gauge Chart -->
+  <ngx-charts-gauge
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[{ name: 'Rating', value: 85 }]"
+    [min]="0"
+    [max]="100"
+    [smallSegments]="5"
+    [angleSpan]="240"
+    [startAngle]="-120"
+    [units]="'%'"
+    [animations]="true"
+    (select)="onSelect()"
+  >
+  </ngx-charts-gauge>
+
+  <!-- Chart 9: Polar Chart -->
+  <ngx-charts-polar-chart
+    [view]="[400, 300]"
+    [scheme]="colorScheme"
+    [results]="[
+      {
+        name: 'Genre Popularity',
+        series: [
+          { name: 'Action', value: 50 },
+          { name: 'Comedy', value: 30 },
+          { name: 'Drama', value: 20 }
+        ]
+      }
+    ]"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [legend]="true"
+    [autoScale]="true"
+    [animations]="true"
+    (select)="onSelect()"
+  >
+  </ngx-charts-polar-chart>
+
+  <!-- Chart 10: Number Card -->
+  <ngx-charts-number-card
+    [view]="[400, 200]"
+    [scheme]="colorScheme"
+    [results]="[{ name: 'Total Movies', value: 200 }]"
+    [animations]="true"
+    (select)="onSelect()"
+  >
+  </ngx-charts-number-card>
+</div>

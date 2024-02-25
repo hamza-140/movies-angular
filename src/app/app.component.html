@@ -1,0 +1,52 @@
+<h1 style="display: flex; justify-content: center">Movie Mania</h1>
+
+<div class="parent">
+  <div class="form-container">
+    <form (ngSubmit)="add()">
+      <div class="form-group">
+        <label for="title">Title: </label>
+        <input type="text" name="title" [(ngModel)]="movie.title" required />
+      </div>
+      <div class="form-group">
+        <label for="budget">Budget: </label>
+        <input
+          type="number"
+          name="budget"
+          [(ngModel)]="movie.budget"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="genre">Genre: </label>
+        <input type="text" name="genre" [(ngModel)]="movie.genre" />
+      </div>
+      <div class="form-group">
+        <label for="releaseDate">Release Date: </label>
+        <input type="date" name="releaseDate" [(ngModel)]="movie.releaseDate" />
+      </div>
+      <div class="form-group">
+        <label for="director">Director: </label>
+        <input type="text" name="director" [(ngModel)]="movie.director" />
+      </div>
+      <button type="submit">Add Movie</button>
+    </form>
+    <div>
+      <input
+        type="text"
+        placeholder="Search..."
+        [(ngModel)]="searchQuery"
+        (input)="searchMovies($event)"
+      />
+
+      <h2>Movie List</h2>
+      <ul>
+        <li *ngFor="let movie of filteredMovies">{{ movie.title }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h1 style="display: flex; justify-content: center">Visualization</h1>
+    <app-box-chart></app-box-chart>
+  </div>
+</div>
